@@ -72,17 +72,115 @@ div {
 	-webkit-tap-highlight-color: transparent;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
-
 :root {
 	--primary-color: hsl(171, 66%, 44%);
 	--secondary-color: hsl(233, 100%, 69%);
 	--text-color: hsl(210, 10%, 33%);
 	--accent-color: hsl(201, 11%, 66%);
+	--primary-color-shadow: 0 3px hsl(171, 66%, 30%);
+	--secondary-color-shadow: 0 3px hsl(233, 66%, 60%);
+	--primary-color-active: hsl(171, 66%, 50%);
+	--secondary-color-active: hsl(233, 100%, 75%);
 }
 
 * {
-	font-family: "Bai Jamjuree";
-	font-weight: 400;
-	font-style: normal;
+	font-family: "Bai Jamjuree", sans-serif;
+}
+
+.wrapper {
+	position: relative;
+}
+
+.header-background {
+	max-height: 363px;
+	position: absolute;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header-logo {
+	max-width: fit-content;
+	margin-top: 96px;
+}
+
+.header-title {
+	text-align: center;
+	font-size: clamp(2rem, 8.5vw, 3rem);
+	margin-top: 64px;
+	color: var(--text-color);
+}
+
+.header-text {
+	text-align: center;
+	margin-top: 20px;
+	color: var(--accent-color);
+	max-width: 30ch;
+}
+
+.btn-group {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+	margin-top: 32px;
+	width: 100%;
+	padding-inline: 32px;
+}
+
+.btn {
+	padding: 12px 24px;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	border-radius: 25px;
+}
+
+.btn-primary {
+	background-color: var(--primary-color);
+	box-shadow: var(--primary-color-shadow);
+}
+
+.btn-primary:hover {
+	background-color: var(--primary-color-active);
+}
+
+.btn-secondary {
+	background-color: var(--secondary-color);
+	box-shadow: 0 3px hsl(233, 66%, 60%);
+}
+
+.btn-secondary:hover {
+	background-color: var(--secondary-color-active);
+}
+
+@media (min-width: 375px) {
+	.wrapper {
+		padding: 0 20px;
+	}
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		padding: 0;
+	}
+
+	.header-text {
+		max-width: 75ch;
+		padding: 0 96px;
+	}
+
+	.btn-group {
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 64px;
+	}
+
+	.btn {
+		width: fit-content;
+		padding: 12px 64px;
+	}
 }
